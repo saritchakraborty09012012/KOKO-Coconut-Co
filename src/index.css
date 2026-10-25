@@ -1,0 +1,526 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Khand";
+  src: url("/assets/fonts/khand-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Khand";
+  src: url("/assets/fonts/khand-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Khand";
+  src: url("/assets/fonts/khand-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("/assets/fonts/patrick-hand.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --color-cream: #f8f8f0;
+  --color-cocoa: #463721;
+  --color-beige: #ffe386;
+  --color-sand: #ece2b1;
+  --color-molasses: #684900;
+  --color-gold: #b9902e;
+  --font-display: "Khand", Impact, sans-serif;
+  --font-hand: "Patrick Hand", cursive;
+  --font-sans: "Inter", Arial, sans-serif;
+}
+
+:root {
+  --background: #f8f8f0;
+  --foreground: #463721;
+  --beige: #ffe386;
+  --light-beige: #ece2b1;
+  --light-brown: #684900;
+  --gold: #b9902e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.04167vw;
+  scroll-behavior: auto;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", Arial, sans-serif;
+  font-synthesis: none;
+  overflow-x: clip;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--beige);
+  color: var(--foreground);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer base {
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+img,
+svg,
+canvas {
+  display: block;
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- typography ---------- */
+.font-display {
+  font-family: "Khand", Impact, sans-serif;
+}
+.font-hand {
+  font-family: "Patrick Hand", cursive;
+}
+.hand {
+  font-family: "Patrick Hand", cursive;
+  font-weight: 400;
+}
+.display {
+  font-family: "Khand", Impact, sans-serif;
+  font-weight: 600;
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.h180 {
+  font-family: "Khand", Impact, sans-serif;
+  font-weight: 600;
+  font-size: min(9rem, 13vw);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.h150 {
+  font-family: "Khand", Impact, sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.8rem, 8vw, 9rem);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.h90 {
+  font-family: "Khand", Impact, sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5.2vw, 5.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.copy {
+  font-size: 1.45rem;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.copy-sm {
+  font-size: 1.08rem;
+  line-height: 1.32;
+  letter-spacing: -0.025em;
+}
+.eyebrow {
+  font-size: 0.67rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.paddx {
+  padding-inline: 3vw;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 2.5vw;
+  }
+  .h180 {
+    font-size: clamp(3.2rem, 12vw, 7rem);
+  }
+  .copy {
+    font-size: 1.2rem;
+  }
+  .paddx {
+    padding-inline: 5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 4vw;
+  }
+  .h180 {
+    font-size: clamp(3.3rem, 15vw, 5.6rem);
+    line-height: 0.88;
+  }
+  .h150 {
+    font-size: clamp(2.6rem, 11vw, 4.6rem);
+  }
+  .copy {
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+  .copy-sm {
+    font-size: 0.96rem;
+  }
+  .paddx {
+    padding-inline: 5vw;
+  }
+}
+
+/* ---------- surfaces / texture ---------- */
+.texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+.paper {
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.35), transparent 38%),
+    radial-gradient(circle at 82% 72%, rgba(120, 92, 50, 0.06), transparent 42%);
+}
+
+.hairline {
+  border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
+}
+.hairline-light {
+  border: 1px solid color-mix(in srgb, var(--beige) 22%, transparent);
+}
+
+/* ---------- reveal masks ---------- */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+.line-inner {
+  display: block;
+  will-change: transform;
+}
+
+/* ---------- marquee ---------- */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+.marquee-paused .marquee-track,
+.marquee-hover:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(55%) rotate(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+.word-in {
+  animation: wordIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes scrollHint {
+  0% {
+    transform: translateY(-110%);
+  }
+  55%,
+  100% {
+    transform: translateY(240%);
+  }
+}
+
+@keyframes curtainHint {
+  0%,
+  100% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ---------- buttons ---------- */
+.scribble-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.24rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+  will-change: transform;
+}
+.scribble-btn svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.scribble-btn span {
+  position: relative;
+  z-index: 1;
+  padding: 0.95rem 1.9rem 1.1rem;
+}
+.scribble-btn:hover {
+  color: var(--gold);
+}
+.scribble-btn.on-dark {
+  color: var(--beige);
+}
+.scribble-btn.on-dark:hover {
+  color: #fff3bd;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 7px;
+  background: var(--foreground);
+  color: var(--light-beige);
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.04rem;
+  line-height: 1;
+  padding: 0.68rem 1.15rem 0.74rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.pill-btn:hover {
+  background: var(--light-beige);
+  color: var(--foreground);
+}
+.pill-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- custom cursor ---------- */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 300;
+  will-change: transform;
+  border-radius: 999px;
+}
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  background: var(--foreground);
+}
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 55%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.28s ease, border-color 0.28s ease;
+}
+.cursor-ring span {
+  font-family: "Patrick Hand", cursive;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: var(--foreground);
+  white-space: nowrap;
+}
+.cursor-hover .cursor-ring {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  background: color-mix(in srgb, var(--beige) 90%, transparent);
+  border-color: transparent;
+}
+.cursor-hover .cursor-ring span {
+  opacity: 1;
+  transform: scale(1);
+}
+.cursor-hover .cursor-dot {
+  opacity: 0;
+}
+.cursor-dark .cursor-dot {
+  background: var(--beige);
+}
+.cursor-dark .cursor-ring {
+  border-color: color-mix(in srgb, var(--beige) 60%, transparent);
+}
+.cursor-dark.cursor-hover .cursor-ring {
+  background: var(--beige);
+}
+.cursor-dark.cursor-hover .cursor-ring span {
+  color: var(--foreground);
+}
+
+/* ---------- can stage ---------- */
+.can-shadow {
+  filter: drop-shadow(0 28px 20px rgba(70, 55, 33, 0.2));
+}
+
+/* ---------- misc ---------- */
+.no-scroll {
+  overflow: hidden;
+}
+.mask-fade-x {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.text-balance {
+  text-wrap: balance;
+}
+.clip-reveal {
+  clip-path: inset(0 0 0 0);
+}
+
+.sticky-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.footer-scallop {
+  --size: 21vw;
+  background-image: radial-gradient(
+    circle at 50% 100%,
+    transparent calc(var(--size) / 2 - 1px),
+    var(--background) calc(var(--size) / 2)
+  );
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--r, 0deg));
+  }
+}
+.floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
